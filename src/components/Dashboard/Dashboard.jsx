@@ -190,6 +190,7 @@ export default function Dashboard() {
                     onClick={() => handleDelete(tweet._id)}
                     className="text-red-500 hover:underline"
                   >
+                    
                     Delete
                   </button>
                 </div>
