@@ -70,16 +70,13 @@ export default function SignupPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [loading, setLoading] = useState(false);
 
   const router = useRouter();
   const { storeTokenInLS } = useAuth();
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setLoading(true);
-      try {
+    try {
       const res = await axios.post(
         "http://localhost:5000/api/auth/signup",
         { username, email, password },
@@ -88,45 +85,39 @@ export default function SignupPage() {
         }
       );
 
-      router.push("/login")
-
-      // localStorage.setItem("token", res.data.token);
+      router.push("/login");
       storeTokenInLS(res.data.token);
 
-
-      // yahan sirf res.data ka use karna hai
       alert(res.data.message);
       console.log(res.data);
     } catch (err) {
       if (err.response && err.response.data.message) {
-    alert(err.response.data.message); // yahan se "User already exists" aayega
-  } else {
-      alert("Something went wrong!");
-  }
+        alert(err.response.data.message);
+      } else {
+        alert("Something went wrong!");
+      }
       console.log(err);
-    } finally {
-      // setLoading(false);
     }
   };
 
   return (
-    <main className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
+    <main className="relative flex items-center justify-center min-h-screen bg-gradient-to-br from-purple-200 via-purple-300 to-purple-400 overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-600 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-purple-300 rounded-full blur-3xl opacity-40 animate-pulse"></div>
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-purple-400 rounded-full blur-3xl opacity-40 animate-pulse"></div>
 
       {/* Signup Card */}
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-2xl"
+        className="relative z-10 w-full max-w-md bg-white/60 backdrop-blur-xl border border-white/30 p-8 rounded-2xl shadow-2xl"
       >
         {/* Title */}
-        <h1 className="text-3xl font-extrabold text-center text-white mb-6">
+        <h1 className="text-3xl font-extrabold text-center text-purple-900 mb-6">
           Create an Account
         </h1>
 
         {/* Username */}
-        <label className="block text-sm font-medium text-gray-200 mb-2">
+        <label className="block text-sm font-medium text-purple-900 mb-2">
           Username
         </label>
         <input
@@ -134,11 +125,11 @@ export default function SignupPage() {
           placeholder="Enter username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400 mb-4"
+          className="w-full px-4 py-3 rounded-lg bg-purple-100 text-purple-900 border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-4"
         />
 
         {/* Email */}
-        <label className="block text-sm font-medium text-gray-200 mb-2">
+        <label className="block text-sm font-medium text-purple-900 mb-2">
           Email
         </label>
         <input
@@ -146,11 +137,11 @@ export default function SignupPage() {
           placeholder="Enter email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400 mb-4"
+          className="w-full px-4 py-3 rounded-lg bg-purple-100 text-purple-900 border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-4"
         />
 
         {/* Password */}
-        <label className="block text-sm font-medium text-gray-200 mb-2">
+        <label className="block text-sm font-medium text-purple-900 mb-2">
           Password
         </label>
         <input
@@ -158,22 +149,21 @@ export default function SignupPage() {
           placeholder="Enter password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-400 mb-6"
+          className="w-full px-4 py-3 rounded-lg bg-purple-100 text-purple-900 border border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-400 mb-6"
         />
 
         {/* Signup Button */}
         <button
           type="submit"
-          className="w-full bg-yellow-400 text-indigo-900 font-semibold px-4 py-3 rounded-lg hover:bg-yellow-300 transition duration-300 shadow-lg"
+          className="w-full bg-purple-500 text-white font-semibold px-4 py-3 rounded-lg hover:bg-purple-400 transition duration-300 shadow-lg"
         >
           Sign Up
         </button>
 
         {/* Login Redirect */}
-        <p className="text-center text-gray-300 text-sm mt-4">
+        <p className="text-center text-purple-900 text-sm mt-4">
           Already have an account?{" "}
-          <Link href="/login" 
-          className="underline text-yellow-400 hover:text-yellow-300">
+          <Link href="/login" className="underline text-purple-700 hover:text-purple-600">
             Login
           </Link>
         </p>
@@ -181,4 +171,3 @@ export default function SignupPage() {
     </main>
   );
 }
-

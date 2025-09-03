@@ -3,14 +3,13 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "../Auth/Auth";
-import { Logout } from "../Logout/Logout";
 
 export default function Navigation() {
   const router = useRouter();
   const { isLoggedIn } = useAuth();
 
   const handleLogout = () => {
-    router.push("/logout");  // ✅ redirect to home (ya /login agar chaho)
+    router.push("/logout"); 
   };
 
   const handleSignupRedirect = () => {
@@ -22,12 +21,12 @@ export default function Navigation() {
   };
 
   return (
-    <header className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 shadow-lg">
+    <header className="bg-gradient-to-r from-red-300 via-pink-300 to-blue-400 shadow-lg">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         
         {/* Logo */}
         <div className="text-2xl font-extrabold text-white tracking-wide">
-          Simple Text Based chatting app
+          Simple Text Based Chatting App
         </div>
 
         {/* Nav Links */}
@@ -57,8 +56,8 @@ export default function Navigation() {
                 Contact
               </Link>
             </li>
-            {isLoggedIn ?
-            <li>
+            {isLoggedIn ? (
+              <li>
                 <button
                   onClick={handleLogout}
                   type="button"
@@ -67,27 +66,28 @@ export default function Navigation() {
                   Logout
                 </button>
               </li>
-              : <>
-              <li>
-              <button
-                onClick={handleSignupRedirect}
-                type="button"
-                className="px-4 py-2 rounded-lg border border-white text-white hover:bg-white hover:text-indigo-700 transition duration-300"
-              >
-                Sign Up
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={handleLoginRedirect}
-                type="button"
-                className="px-4 py-2 rounded-lg border border-white text-white hover:bg-white hover:text-indigo-700 transition duration-300"
-              >
-                Login
-              </button>
-            </li>
-              
-              </>}
+            ) : (
+              <>
+                <li>
+                  <button
+                    onClick={handleSignupRedirect}
+                    type="button"
+                    className="px-4 py-2 rounded-lg border border-white text-white hover:bg-white hover:text-indigo-700 transition duration-300"
+                  >
+                    Sign Up
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLoginRedirect}
+                    type="button"
+                    className="px-4 py-2 rounded-lg border border-white text-white hover:bg-white hover:text-indigo-700 transition duration-300"
+                  >
+                    Login
+                  </button>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
       </div>
