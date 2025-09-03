@@ -11,26 +11,6 @@ export default function Dashboard() {
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-
-//   // ✅ Axios instance with auth token
-//   // const api = axios.create({
-//   //   baseURL: "http://localhost:5000/api/tweets", // adjust to your backend
-//   //   headers: {
-//   //     Authorization: `Bearer ${localStorage.getItem("token")}`, // token from login
-//   //   },
-//   // });
-
-  // // ✅ Fetch my tweets
-  // const fetchTweets = async () => {
-  //   try {
-      
-  //     const res = await axios.get(`${API_URL}/api/tweets`);
-  //     setTweets(res.data);
-  //   } catch (err) {
-  //     console.error("Error fetching tweets:", err);
-  //   }
-  // };
-
   const fetchTweets = async () => {
   try {
     const token = localStorage.getItem("token");
@@ -190,7 +170,7 @@ export default function Dashboard() {
                     onClick={() => handleDelete(tweet._id)}
                     className="text-red-500 hover:underline"
                   >
-                    
+
                     Delete
                   </button>
                 </div>
