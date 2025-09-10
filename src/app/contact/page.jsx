@@ -1,12 +1,12 @@
-import Contact from '@/components/Contact/Contact'
-import React from 'react'
+import React from "react";
+import ContactForm from "@/components/ContactForm/ContactForm";
 
-const page = () => {
+const ContactPage = () => {
   return (
-    <>
-    <Contact />
-    </>
-)
-}
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <ContactForm />
+    </div>
+  );
+};
 
-export default page
+export default ContactPage;

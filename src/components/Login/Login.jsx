@@ -27,7 +27,7 @@ export default function LoginPage() {
         }
       );
 
-      router.push("/dashboard");
+      router.push("/profile");
 
       storeTokenInLS(res.data.token);
 

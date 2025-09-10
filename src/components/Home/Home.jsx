@@ -1,161 +1,133 @@
+// "use client";
+// import React from "react";
+// import Link from "next/link";
+
+// export default function Home() {
+//   const sampleTweets = [
+//     { id: 1, user: "Alice", text: "Just shared my first tweet! 🚀" },
+//     { id: 2, user: "Bob", text: "Exploring new ideas today! 🌟" },
+//     { id: 3, user: "Charlie", text: "This platform is amazing! 🎉" },
+//   ];
+
+//   return (
+//     <main className="relative min-h-screen bg-gradient-to-b from-gray-200 via-gray-100 to-white text-gray-900">
+//       {/* Overlay */}
+//       <div className="absolute inset-0 bg-white/10" />
+
+//       {/* Content */}
+//       <div className="relative z-10 max-w-4xl mx-auto px-6 py-12">
+//         {/* Header Section */}
+//         <div className="text-center mb-12">
+//           <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg text-sky-400">
+//             Welcome to TweetHub
+//           </h1>
+//           <p className="text-lg md:text-xl mb-8 text-blue-900/90 leading-relaxed">
+//             Discover, Share and Explore trending tweets instantly 🚀
+//           </p>
+
+//           <Link
+//             href="/dashboard"
+//             className="px-6 py-3 rounded-lg bg-cyan-300 text-blue-900 font-semibold hover:bg-cyan-400 transition duration-300"
+//           >
+//             Join the Conversation
+//           </Link>
+//         </div>
+
+//         {/* Trending Tweets Preview */}
+//         <div className="grid md:grid-cols-3 gap-6 mt-12">
+//           {sampleTweets.map((tweet) => (
+//             <div
+//               key={tweet.id}
+//               className="bg-white/30 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform cursor-pointer"
+//             >
+//               <p className="text-gray-900 font-bold mb-2">{tweet.user}</p>
+//               <p className="text-gray-700">{tweet.text}</p>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* ✅ Join the Journey Section */}
+//         <div className="mt-20 rounded-3xl p-12 text-center text-gray-900 shadow-lg bg-gradient-to-r from-blue-200 via-cyan-200 to-purple-200 transform transition duration-500 hover:scale-105">
+//           <h2 className="text-4xl font-bold mb-4 drop-shadow-md">
+//             Join the Journey Today!
+//           </h2>
+//           <p className="text-lg mb-6">
+//             Start your adventure and become part of a growing community.
+//           </p>
+//           <Link
+//             href="/signup"
+//             className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition duration-300"
+//           >
+//             Get Started
+//           </Link>
+//         </div>
+//       </div>
+//     </main>
+//   );
+// }
+
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 export default function Home() {
-  const [tweets, setTweets] = useState([
-    { id: 1, user: "Muhammed", text: "Hello sheliya! 🚀" },
-    { id: 2, user: "chota", text: "hello chote 🎉" },
-    { id: 3, user: "lala", text: "hello brother 🎉" },
-  ]);
-  const [tweetText, setTweetText] = useState("");
-  const [editId, setEditId] = useState(null);
-  const [editText, setEditText] = useState("");
-
-  const handlePost = (e) => {
-    e.preventDefault();
-    if (!tweetText.trim()) return;
-    const newTweet = {
-      id: tweets.length + 1,
-      user: "Guest",
-      text: tweetText,
-    };
-    setTweets([newTweet, ...tweets]);
-    setTweetText("");
-  };
-
-  const handleDelete = (id) => {
-    setTweets(tweets.filter((t) => t.id !== id));
-  };
-
-  const handleEdit = (id, text) => {
-    setEditId(id);
-    setEditText(text);
-  };
-
-  const handleSaveEdit = (id) => {
-    setTweets(
-      tweets.map((t) => (t.id === id ? { ...t, text: editText } : t))
-    );
-    setEditId(null);
-    setEditText("");
-  };
+  const sampleTweets = [
+    { id: 1, user: "Alice", text: "Just shared my first tweet! 🚀" },
+    { id: 2, user: "Bob", text: "Exploring new ideas today! 🌟" },
+    { id: 3, user: "Charlie", text: "This platform is amazing! 🎉" },
+  ];
 
   return (
-    <main className="relative min-h-screen bg-gradient-to-b from-blue-300 via-blue-200 to-blue-100 text-gray-900">
+    <main className="relative min-h-screen bg-gradient-to-b from-blue-50 via-cyan-50 to-white text-gray-900">
       {/* Overlay */}
-      <div className="absolute inset-0 bg-white/10" />
+      <div className="absolute inset-0 bg-white/5" />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 py-12">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg text-blue-900">
-            Welcome to{" "}
-            <span className="text-yellow-400">
-              Simple Text-Based Platform
-            </span>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg text-blue-700">
+            Welcome to TweetHub
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-blue-900/90 leading-relaxed">
-            Post, Edit and Manage your tweets in real-time 🚀
+          <p className="text-lg md:text-xl mb-8 text-gray-700 leading-relaxed">
+            Discover, Share and Explore trending tweets instantly 🚀
           </p>
 
-          {/* Buttons */}
-          <div className="flex justify-center gap-4">
-            <Link
-              href="/about"
-              className="px-6 py-3 rounded-lg bg-yellow-400 text-blue-900 font-semibold hover:bg-yellow-300 transition duration-300"
-            >
-              Get Started
-            </Link>
-            <Link
-              href="/contact"
-              className="px-6 py-3 rounded-lg border border-blue-900 hover:bg-blue-900 hover:text-white transition duration-300"
-            >
-              Contact Us
-            </Link>
-          </div>
+          <Link
+            href="/dashboard"
+            className="px-6 py-3 rounded-lg bg-cyan-500 text-white font-semibold hover:bg-cyan-400 transition duration-300"
+          >
+            Join the Conversation
+          </Link>
         </div>
 
-        {/* Tweet Section */}
-        <div className="bg-white text-gray-900 shadow-2xl rounded-3xl p-8">
-          <h2 className="text-2xl font-bold mb-4 text-center text-blue-700">
-            Post a Tweet 📝
-          </h2>
-
-          {/* Tweet Form */}
-          <form onSubmit={handlePost} className="mb-6">
-            <textarea
-              value={tweetText}
-              onChange={(e) => setTweetText(e.target.value)}
-              placeholder="What's happening?"
-              className="w-full p-4 border border-blue-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-              rows={3}
-            />
-            <button
-              type="submit"
-              className="mt-3 px-5 py-2 bg-blue-500 text-white font-semibold rounded-2xl hover:bg-blue-600 transition"
+        {/* Trending Tweets Preview */}
+        <div className="grid md:grid-cols-3 gap-6 mt-12">
+          {sampleTweets.map((tweet) => (
+            <div
+              key={tweet.id}
+              className="bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform cursor-pointer"
             >
-              Post Tweet
-            </button>
-          </form>
+              <p className="font-bold mb-2 text-blue-800">{tweet.user}</p>
+              <p className="text-gray-700">{tweet.text}</p>
+            </div>
+          ))}
+        </div>
 
-          {/* Tweet List */}
-          <div className="space-y-4">
-            {tweets.map((t) => (
-              <div
-                key={t.id}
-                className="p-4 border rounded-2xl bg-blue-50 shadow-sm"
-              >
-                <p className="font-semibold text-blue-600">{t.user}</p>
-
-                {/* Edit Mode */}
-                {editId === t.id ? (
-                  <div>
-                    <textarea
-                      value={editText}
-                      onChange={(e) => setEditText(e.target.value)}
-                      className="w-full p-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                    <div className="flex gap-2 mt-2">
-                      <button
-                        onClick={() => handleSaveEdit(t.id)}
-                        className="px-3 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600"
-                      >
-                        Save
-                      </button>
-                      <button
-                        onClick={() => setEditId(null)}
-                        className="px-3 py-1 bg-gray-400 text-white rounded-lg hover:bg-gray-500"
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                  </div>
-                ) : (
-                  <p className="mt-1">{t.text}</p>
-                )}
-
-                {/* Actions */}
-                {editId !== t.id && (
-                  <div className="flex gap-3 mt-3">
-                    <button
-                      onClick={() => handleEdit(t.id, t.text)}
-                      className="px-3 py-1 bg-yellow-400 text-black rounded-lg hover:bg-yellow-500"
-                    >
-                      Edit
-                    </button>
-                    <button
-                      onClick={() => handleDelete(t.id)}
-                      className="px-3 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600"
-                    >
-                      Delete
-                    </button>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+        {/* ✅ Join the Journey Section */}
+        <div className="mt-20 rounded-3xl p-12 text-center shadow-lg bg-gradient-to-r from-cyan-100 via-blue-100 to-white transform transition duration-500 hover:scale-105">
+          <h2 className="text-4xl font-bold mb-4 drop-shadow-md text-blue-800">
+            Join the Journey Today!
+          </h2>
+          <p className="text-lg mb-6 text-gray-700">
+            Start your adventure and become part of a growing community.
+          </p>
+          <Link
+            href="/signup"
+            className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-500 transition duration-300"
+          >
+            Get Started
+          </Link>
         </div>
       </div>
     </main>

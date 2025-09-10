@@ -1,16 +1,16 @@
-"use client"
+"use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../Auth/Auth";
 
 export const Logout = () => {
-    const router = useRouter();
-    const { LogoutUser } = useAuth();
+  const router = useRouter();
+  const { LogoutUser } = useAuth();
 
-    useEffect(() => {
-        LogoutUser();
-        router.push("/login")
-    }, [LogoutUser]);
+  useEffect(() => {
+    LogoutUser();             // ✅ sirf token clear kare
+    router.replace("/dashboard");  // ✅ direct dashboard bhejo
+  }, []);
 
-    return <p>Logging out...</p>
-}
+  return <p>Logging out...</p>;
+};

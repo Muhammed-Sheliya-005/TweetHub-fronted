@@ -1,37 +1,3 @@
-// "use client";
-
-// import Link from "next/link";
-
-// export default function Footer() {
-//   return (
-//     <footer className="relative bg-gradient-to-r from-indigo-800 via-purple-700 to-pink-600 text-white py-8 mt-10">
-//       {/* Glass effect */}
-//       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 bg-white/10 backdrop-blur-xl rounded-2xl p-6 shadow-lg">
-        
-//         {/* Left side - Logo / Name */}
-//         <div className="text-center md:text-left">
-//           <h2 className="text-2xl font-bold">Simple Text Platform</h2>
-//           <p className="text-sm text-slate-300 mt-1">
-//             A mini project with Authentication & JWT
-//           </p>
-//         </div>
-
-//         {/* Middle - Navigation */}
-//         <div className="flex gap-6">
-//           <Link href="/" className="hover:text-blue-300 transition">Home</Link>
-//           <Link href="/login" className="hover:text-blue-300 transition">Login</Link>
-//           <Link href="/signup" className="hover:text-blue-300 transition">Signup</Link>
-//         </div>
-
-//         {/* Right side - Copyright */}
-//         <div className="text-sm text-slate-300 text-center md:text-right">
-//           © {new Date().getFullYear()} Simple Platform. All rights reserved.
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// }
-
 "use client";
 
 import Link from "next/link";
