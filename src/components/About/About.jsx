@@ -14,7 +14,7 @@ export default function About() {
 
         {/* Long, unique paragraph */}
         <p className="text-lg text-gray-700 leading-relaxed">
-          Welcome to <span className="font-semibold text-purple-500">Textly</span>, a new kind of social media platform built entirely around the 
+          Welcome to <span className="font-semibold text-purple-500">TweetHub</span>, a new kind of social media platform built entirely around the 
           <span className="font-semibold text-pink-500"> power of words</span>. In a digital world filled with endless images, videos, and 
           distractions, we bring the focus back to what truly matters — clear, meaningful, and expressive text. 
           This is a space designed for thinkers, creators, learners, and everyday people who want to share 

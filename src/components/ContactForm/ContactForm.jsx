@@ -52,10 +52,10 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-8 space-y-6 border border-gray-100 w-full max-w-lg"
+      className="bg-cyan-50/80 backdrop-blur-md rounded-2xl shadow-xl p-8 space-y-6 border border-gray-100 w-full max-w-lg"
     >
-      <h2 className="text-2xl font-bold text-cyan-500 text-center mb-4">
-        Send us a Message
+      <h2 className="text-5xl font-bold text-cyan-500 text-center mb-6 drop-shadow-md">
+        Contact Us
       </h2>
 
       {/* Name */}
@@ -67,7 +67,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="Your name"
           required
-          className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          className="w-full px-4 py-3 rounded-lg bg-white/80 text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:bg-white/90 hover:bg-white/90 transition duration-300"
         />
       </div>
 
@@ -81,7 +81,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="you@example.com"
           required
-          className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          className="w-full px-4 py-3 rounded-lg bg-white/80 text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:bg-white/90 hover:bg-white/90 transition duration-300"
         />
       </div>
 
@@ -95,7 +95,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder="Write your message..."
           required
-          className="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+          className="w-full px-4 py-3 rounded-lg bg-white/80 text-gray-900 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:bg-white/90 hover:bg-white/90 transition duration-300"
         />
       </div>
 

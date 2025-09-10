@@ -27,7 +27,7 @@ export default function Navigation() {
         
         {/* Logo */}
         <div className="text-2xl font-extrabold text-white tracking-wide">
-          Simple Text Based Chatting App
+         TweetHub
         </div>
 
         {/* Desktop Nav */}
