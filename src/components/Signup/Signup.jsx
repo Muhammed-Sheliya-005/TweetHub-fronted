@@ -10,6 +10,9 @@ export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+
   const router = useRouter();
   const { storeTokenInLS } = useAuth();
 
@@ -17,7 +20,7 @@ export default function SignupPage() {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        `${API_URL}/api/auth/signup`,
         { username, email, password },
         {
           headers: { "Content-Type": "application/json" },

@@ -11,6 +11,8 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   const router = useRouter();
   const { storeTokenInLS } = useAuth();
 
@@ -20,7 +22,7 @@ export default function LoginPage() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        `${API_URL}/api/auth/login`,
         { email, password },
         {
           headers: { "Content-Type": "application/json" },
