@@ -168,13 +168,19 @@ export default function Navigation({ view, setView }) { // ✅ added props
             <>
               <button
                 className={`px-3 py-1 rounded ${view === "all" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
-                onClick={() => setView("all")}
+                onClick={() => {
+                  setView("all")
+                  router.push("/dashboard")
+                }}
               >
                 All Tweets
               </button>
               <button
                 className={`px-3 py-1 rounded ${view === "profile" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
-                onClick={() => setView("profile")}
+                onClick={() => {
+                  setView("profile")
+                  router.push("/profile")
+                }}
               >
                 My Profile
               </button>
@@ -234,13 +240,19 @@ export default function Navigation({ view, setView }) { // ✅ added props
           {isLoggedIn && (
             <div className="flex gap-2">
               <button
-                onClick={() => setView("all")}
+                onClick={() => {
+                  setView("all")
+                  router.push("/dashboard")
+                }}
                 className={`flex-1 px-3 py-1 rounded ${view === "all" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
               >
                 All Tweets
               </button>
               <button
-                onClick={() => setView("profile")}
+                onClick={() => {
+                  setView("profile")
+                  router.push("/profile")
+                }}
                 className={`flex-1 px-3 py-1 rounded ${view === "profile" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
               >
                 My Profile
