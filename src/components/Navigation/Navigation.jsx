@@ -41,6 +41,18 @@ export default function Navigation() {
           <Link href="/contact" className="hover:text-yellow-300 transition-colors duration-300">
             Contact
           </Link>
+          {isLoggedIn &&  (
+            <>
+            <Link href="/dashboard" className="hover:text-yellow-300 transition-colors duration-300"
+            >
+              All Tweets
+            </Link>
+            <Link href="/profile" className="hover:text-yellow-300 transition-colors duration-300"
+            >    
+            My Profile          
+            </Link>
+            </>            
+          )}
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
@@ -88,7 +100,19 @@ export default function Navigation() {
           </Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)} className="block hover:text-yellow-300">
             Contact
-          </Link>
+          </Link>        
+          {isLoggedIn &&  (
+            <>
+            <Link href="/dashboard" className="hover:text-yellow-300 transition-colors duration-300"
+            >
+              All Tweets
+            </Link>
+            <Link href="/profile" className="hover:text-yellow-300 transition-colors duration-300"
+            >    
+            My Profile          
+            </Link>
+            </>            
+          )}
           {isLoggedIn ? (
             <button
               onClick={() => { handleLogout(); setMenuOpen(false); }}
