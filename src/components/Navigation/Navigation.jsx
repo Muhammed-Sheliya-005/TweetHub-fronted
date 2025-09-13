@@ -49,7 +49,6 @@ export default function Navigation() {
                 className={`px-3 py-1 rounded ${view === "all" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
                 onClick={() => {
                   setView("all")
-                  router.push("/dashboard")
                 }}
               >
                 All Tweets
@@ -58,7 +57,6 @@ export default function Navigation() {
                 className={`px-3 py-1 rounded ${view === "profile" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
                 onClick={() => {
                   setView("profile")
-                  router.push("/profile")
                 }}
               >
                 My Profile
@@ -121,7 +119,6 @@ export default function Navigation() {
               <button
                 onClick={() => {
                   setView("all")
-                  router.push("/dashboard")
                 }}
                 className={`flex-1 px-3 py-1 rounded ${view === "all" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
               >
@@ -130,7 +127,6 @@ export default function Navigation() {
               <button
                 onClick={() => {
                   setView("profile")
-                  router.push("/profile")
                 }}
                 className={`flex-1 px-3 py-1 rounded ${view === "profile" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
               >
