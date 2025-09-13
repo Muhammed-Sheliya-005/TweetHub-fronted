@@ -41,29 +41,6 @@ export default function Navigation() {
           <Link href="/contact" className="hover:text-yellow-300 transition-colors duration-300">
             Contact
           </Link>
-
-              {/* ✅ Toggle Buttons */}
-          {isLoggedIn && (
-            <>
-              <button
-                className={`px-3 py-1 rounded ${view === "all" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
-                onClick={() => {
-                  setView("all")
-                }}
-              >
-                All Tweets
-              </button>
-              <button
-                className={`px-3 py-1 rounded ${view === "profile" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
-                onClick={() => {
-                  setView("profile")
-                }}
-              >
-                My Profile
-              </button>
-            </>
-          )}
-
           {isLoggedIn ? (
             <button
               onClick={handleLogout}
@@ -112,29 +89,6 @@ export default function Navigation() {
           <Link href="/contact" onClick={() => setMenuOpen(false)} className="block hover:text-yellow-300">
             Contact
           </Link>
-
-              {/* ✅ Mobile toggle buttons */}
-          {isLoggedIn && (
-            <div className="flex gap-2">
-              <button
-                onClick={() => {
-                  setView("all")
-                }}
-                className={`flex-1 px-3 py-1 rounded ${view === "all" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
-              >
-                All Tweets
-              </button>
-              <button
-                onClick={() => {
-                  setView("profile")
-                }}
-                className={`flex-1 px-3 py-1 rounded ${view === "profile" ? "bg-yellow-400 text-black" : "bg-blue-500 text-white"}`}
-              >
-                My Profile
-              </button>
-            </div>
-          )}
-
           {isLoggedIn ? (
             <button
               onClick={() => { handleLogout(); setMenuOpen(false); }}
